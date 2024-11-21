@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Menus, DB, mySQLDbTables, ExtCtrls, DBCtrls, Grids, DBGrids,
-  StdCtrls, Mask;
+  StdCtrls, Mask, frxClass, frxDBSet;
 
 type
   TForm2 = class(TForm)
@@ -20,6 +20,10 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
+    frxDBDataset1: TfrxDBDataset;
+    Button1: TButton;
+    frxReport1: TfrxReport;
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,6 +36,11 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+begin
+frxReport1.ShowReport();
+end;
 
 end.
  
